@@ -1,7 +1,9 @@
-export default function Home() {
+import Heading from "@/components/ui/Heading";
+
+export default function ProductsPage() {
   return (
     <>
-    Hola mundo en next
+    <Heading>Administrar productos</Heading>
     </>
   );
 }
