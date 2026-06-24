@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌿 Esencia — Quiosco de Pedidos
 
-## Getting Started
+Aplicación web de quiosco/punto de venta construida con **Next.js 14**, **TypeScript**, **Prisma ORM** y **Tailwind CSS**. Permite gestionar pedidos de manera intuitiva desde una interfaz moderna y responsiva.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tecnologías
+
+| Tecnología | Versión |
+|---|---|
+| [Next.js](https://nextjs.org/) | 14.2.33 |
+| [React](https://react.dev/) | 18 |
+| [TypeScript](https://www.typescriptlang.org/) | ^5 |
+| [Prisma ORM](https://www.prisma.io/) | ^6.19.0 |
+| [Tailwind CSS](https://tailwindcss.com/) | ^3.4.1 |
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+esencia-next/
+├── app/                  # Rutas y páginas (App Router de Next.js)
+├── components/
+│   └── order/            # Componentes relacionados al flujo de pedidos
+├── prisma/               # Schema y migraciones de la base de datos
+├── src/
+│   └── generated/prisma/ # Cliente de Prisma generado
+├── .env                  # Variables de entorno
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Instalación y configuración
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Clona el repositorio
 
-## Learn More
+```bash
+git clone https://github.com/GuadalupeHdez12/Esencia-next.git
+cd Esencia-next
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Instala las dependencias
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Configura las variables de entorno
 
-## Deploy on Vercel
+Crea un archivo `.env` en la raíz del proyecto con tu cadena de conexión a la base de datos:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+DATABASE_URL="postgresql://usuario:contraseña@localhost:5432/esencia_db"
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. Inicializa la base de datos
+
+```bash
+npx prisma migrate dev
+npx prisma generate
+```
+
+---
+
+## 🧑‍💻 Comandos disponibles
+
+```bash
+# Inicia el servidor de desarrollo
+npm run dev
+
+# Compila para producción
+npm run build
+
+# Inicia el servidor en modo producción
+npm start
+
+# Ejecuta el linter
+npm run lint
+```
+
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
+
+---
+
+## 🗄️ Base de datos
+
+El proyecto usa **Prisma ORM** para gestionar la base de datos. El schema se encuentra en `prisma/schema.prisma`.
+
+Comandos útiles de Prisma:
+
+```bash
+# Visualiza la base de datos en el navegador
+npx prisma studio
+
+# Aplica cambios al schema
+npx prisma migrate dev --name nombre_migracion
+
+# Regenera el cliente de Prisma
+npx prisma generate
+```
+
+---
+
+## 📦 Despliegue
+
+La forma más sencilla de desplegar esta aplicación es usando [Vercel](https://vercel.com/):
+
+1. Conecta tu repositorio en [vercel.com/new](https://vercel.com/new)
+2. Agrega las variables de entorno necesarias (`DATABASE_URL`, etc.)
+3. Vercel detectará automáticamente que es un proyecto Next.js y lo configurará
+
+Consulta la [documentación de despliegue de Next.js](https://nextjs.org/docs/app/building-your-application/deploying) para más opciones.
+
+---
+
+## 👩‍💻 Autora
+
+**Guadalupe Hernández**  
+[@GuadalupeHdez12](https://github.com/GuadalupeHdez12)
