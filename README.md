@@ -117,7 +117,4 @@ Consulta la [documentación de despliegue de Next.js](https://nextjs.org/docs/ap
 
 ---
 
-## 👩‍💻 Autora
 
-**Guadalupe Hernández**  
-[@GuadalupeHdez12](https://github.com/GuadalupeHdez12)
